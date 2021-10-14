@@ -1,0 +1,82 @@
+<h2>
+    <ng-container *ngIf="labelButton == 'Guardar'; else elseTemplate">
+        Alta
+    </ng-container>
+    <ng-template #elseTemplate>
+        Editar
+    </ng-template>
+    
+    Persona
+</h2>
+
+<form [formGroup]="myFormPerson" autocomplete="off" (ngSubmit)="save()">
+    <div class="card">
+        <label for="name">Nombre: </label>
+        <input 
+            type="text"
+            id="name"
+            formControlName="name">
+        <div class="error" *ngIf="fieldNotValid('name')">{{labelErrors.name}}</div>
+        <br>
+    </div>
+
+    <div class="card">
+        <label for="first-name">Apellido paterno: </label>
+        <input 
+            type="text"
+            id="first-name"
+            formControlName="firstName">
+        <div class="error" *ngIf="fieldNotValid('firstName')">{{labelErrors.firstName}}</div>
+        <br>
+    </div>
+
+    <div class="card">
+        <label for="last-name">Apellido materno: </label>
+        <input 
+            type="text"
+            id="last-name"
+            formControlName="lastName">
+        <div class="error" *ngIf="fieldNotValid('lastName')">{{labelErrors.lastName}}</div>
+        <br>
+    </div>
+    
+    <div class="card">
+        <label for="rfc">RFC: </label>
+        <input 
+            type="text"
+            id="rfc"
+            formControlName="rfc">
+        <div class="error" *ngIf="fieldNotValid('rfc')">{{labelErrors.rfc}}</div>
+        <br>
+    </div>
+
+    <div class="card">
+        <label for="gender">Sexo: </label>
+        <select type="text"
+            id="gender"
+            formControlName="gender"
+            >
+            <option value="m">Masculino</option>
+            <option value="f">Femenino</option>
+        </select>
+        <div class="error" *ngIf="fieldNotValid('gender')">{{labelErrors.gender}}</div>
+        <br>
+    </div>
+    <div class="card">
+        <button type="submit">{{ labelButton }}</button>
+        <div>{{ labelStatus }}</div>
+    </div>
+</form>
+
+<h3>Debuging Form</h3>
+<div><span>Form Valid: </span><span>{{ myFormPerson.valid}}</span></div>
+<div><span>Form Pristine: </span><span>{{ myFormPerson.pristine}}</span></div>
+<div><span>Form Touched: </span><span>{{ myFormPerson.touched }}</span></div>
+<div><span>Form Invalid: </span><span>{{ myFormPerson.invalid}}</span></div>
+<div><span>Form Errors </span><span>{{ myFormPerson.errors | json}}</span></div>
+
+<div><span>Form Error name: </span><pre>{{ myFormPerson.controls.name.errors| json}}</pre></div>
+<div><span>Form Error first name: </span><pre>{{ myFormPerson.controls.firstName.errors | json}}</pre></div>
+<div><span>Form Error last name: </span><pre>{{ myFormPerson.controls.lastName.errors | json}}</pre></div>
+<div><span>Form Error rfc: </span><pre>{{ myFormPerson.controls.rfc.errors | json}}</pre></div>
+<div><span>Form Error gender: </span><pre>{{ myFormPerson.controls.gender.errors | json}}</pre></div>

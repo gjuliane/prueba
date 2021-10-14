@@ -1,0 +1,11 @@
+<div class="card">
+    <div>Nombre: {{ person.name }}</div>
+    <div>Apellido Paterno: {{ person.firstName }}</div>
+    <div>Apellido Materno: {{ person.lastName }}</div>
+    <div>RFC: {{ person.rfc }}</div>
+    <div>Sexo: {{ person.gender | gender}}</div>
+    <div>
+        <button [routerLink]="['/persons/edit', person.id]">Editar</button>
+        <button (click)="delete($event)">Eliminar</button>
+    </div>
+</div>

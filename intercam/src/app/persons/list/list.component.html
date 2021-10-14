@@ -1,0 +1,5 @@
+<h2>Listado de personas</h2>
+
+<div *ngFor="let person of persons;let i = index" >
+    <app-card [person]="person" (OnDeletePerson)='delete(person, i)'></app-card>
+</div>

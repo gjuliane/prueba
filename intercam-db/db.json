@@ -1,0 +1,20 @@
+{
+  "persons": [
+    {
+      "name": "Marcelo",
+      "firstName": "Julian",
+      "lastName": "Esquivel",
+      "rfc": "eewqe",
+      "gender": "m",
+      "id": 2
+    },
+    {
+      "name": "Dulce",
+      "firstName": "Esquivel",
+      "lastName": "Meza",
+      "rfc": "DUL432",
+      "gender": "f",
+      "id": 3
+    }
+  ]
+}
